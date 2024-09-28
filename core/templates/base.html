@@ -75,7 +75,7 @@
       <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark st">
         <div class="container-fluid">
           <img src="/ege.png" alt="">
-          <a class="navbar-brand" href="#"><h1>БатинаФерма</h1></a>
+          <a class="navbar-brand" href="{% url "home" %}"><h1>БатинаФерма</h1></a>
           <button
             class="navbar-toggler"
             type="button"
@@ -115,6 +115,7 @@
     
   </body>
   {% block footer %}
+  <footer>
   <div class="sticky-bottom row bg-dark">
         
           <div class="col-4">

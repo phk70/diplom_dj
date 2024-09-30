@@ -3,13 +3,14 @@
 <div class="container">
     <div class="row">
         <div class="news col-3">
-            <p>Отзывы покупателей</p>
+            <h3>Отзывы покупателей</h3>
             <hr>
             {% for comment in comments %}
             <div>
+                <p class="text-end mb-0" style="font-size: 10px">{{comment.published_date}}</p>                
                 <p>{{comment.name}}</p>
                 <p class="comment">{{comment.comment}}</p>            
-                <hr>            
+                <hr class="m-1">            
             </div>   
             {% endfor%}         
         </div>
@@ -18,18 +19,16 @@
             <h3>             
                 Продукцию всегда можно приобрести на ферме, расположенной в д.Нелюбино Томской области.
                 <br>В нашем ассортименте:
-            </h3>
-            <p>    
-                <li>Мясо перепела охлажденное и замороженное</li>
-                <li>Яйцо пищевое</li>
-                <li>Яйцо инкубационное</li>
-                <li>Перепела живок</li>
-            </p>
+            </h3>                
+            <p>&emsp;Мясо перепела охлажденное и замороженное</p>
+            <p>&emsp;Яйцо пищевое</p>
+            <p>&emsp;Яйцо инкубационное</p>
+            <p>&emsp;Перепела живок</p>            
             <hr>
             {% for post in posts %}
             <div>
                 <h3>{{post.title}}</h3>
-                <p>{{post.context}}</p> 
+                <p>{{post.context|linebreaksbr}}</p> 
                 <hr>               
             </div>
             {% endfor %}  

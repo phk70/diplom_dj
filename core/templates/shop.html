@@ -1,5 +1,37 @@
 {% extends "base.html" %}
 
 {% block title %}БатинаФерма - Магазин{% endblock title %}
-{% block footer %}
-{% endblock footer %}
+
+{% block content %}
+<div class="container">
+    {% for product in products%}
+    <div class="card">
+        <div class="row">
+            <div class="col-3">
+                <p>Фото</p>
+                {% comment %} <img src="" /> {% endcomment %}
+            </div>
+            <div class="col-9">
+                <div class="row">
+                    <h3>{{product.title}}</h3>
+                </div>
+                <div class="row">
+                    <p>{{product.description}}</p>
+                </div>
+                <div class="row text-end">
+                    <div class="col-1">
+                        <button class="btn btn-danger" type="button">ЗАКАЗАТЬ</button>
+                    </div>                    
+                    <div class="col-11">
+                        <h2>{{product.price}} рублей штука</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor%}
+</div>
+
+{% endblock content %}
+
+{% block footer %}{% endblock footer %}

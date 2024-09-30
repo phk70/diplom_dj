@@ -5,6 +5,7 @@ class Comments(models.Model):
     "База комментариев пользователей"
     name = models.CharField(max_length = 50, verbose_name="Имя пользователя")
     comment = models.TextField(max_length=200, verbose_name="Комментарий")
+    published_date = models.DateTimeField(auto_now_add=True, verbose_name='Дата комментария')
 
     def __str__(self):
         return self.name

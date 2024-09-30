@@ -13,7 +13,7 @@ from .models import Comments, Posts, Products, Recipies, Users
 
 @admin.register(Comments)
 class CommentsAdmin(admin.ModelAdmin):
-    list_display = ['name', 'comment']
+    list_display = ['name', 'comment', 'published_date']
 
 
 @admin.register(Posts)

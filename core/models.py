@@ -24,13 +24,13 @@ class Posts(models.Model):
         return self.title
 
     class Meta:
-        verbose_name = "Запись"
-        verbose_name_plural="Записи"
+        verbose_name = "Контекст главной страницы"
+        verbose_name_plural="Контекст главной страницы"
 
 
 class Products(models.Model):
     "База продуктов для продажи"
-    title = models.CharField(max_length=150, verbose_name="Продукт")
+    title = models.CharField(max_length=150, verbose_name="Наименование")
     description = models.TextField(verbose_name="Описание")
     photo = models.ImageField(upload_to='products/photos/', blank=True, null=True, verbose_name='Фото')
     price = models.DecimalField(max_digits=5, decimal_places=2, verbose_name="Цена")
@@ -42,6 +42,19 @@ class Products(models.Model):
         verbose_name = "Товар"
         verbose_name_plural = "Товары"
 
+
+class Recipies(models.Model):
+    "База данных рецептов"
+    title = models.CharField(max_length=150, verbose_name="Заголовок рецепта")
+    description = models.TextField(verbose_name="Описание")
+    photo = models.ImageField(upload_to='recipies/photos/', blank=True, null=True, verbose_name='Фото')    
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = "Рецепт"
+        verbose_name_plural = "Рецепты"
 
 class Users(models.Model):
     "База пользователей"

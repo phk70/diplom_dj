@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Comments, Posts, Products, Users
+from .models import Comments, Posts, Products, Recipies, Users
 
 # Простая регистрация
 # admin.site.register(Comments)
@@ -25,6 +25,13 @@ class PostsAdmin(admin.ModelAdmin):
 @admin.register(Products)
 class ProductsAdmin(admin.ModelAdmin):
     list_display = ['title', 'description', 'photo', 'price']
+    list_filter = ['title']
+    search_fields = ['title']
+
+
+@admin.register(Recipies)
+class RecipiesAdmin(admin.ModelAdmin):
+    list_display = ['title', 'description', 'photo']
     list_filter = ['title']
     search_fields = ['title']
 

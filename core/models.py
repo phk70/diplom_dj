@@ -32,7 +32,7 @@ class Products(models.Model):
     "База продуктов для продажи"
     title = models.CharField(max_length=150, verbose_name="Продукт")
     description = models.TextField(verbose_name="Описание")
-    photo = models.ImageField(verbose_name="Фото")
+    photo = models.ImageField(upload_to='products/photos/', blank=True, null=True, verbose_name='Фото')
     price = models.DecimalField(max_digits=5, decimal_places=2, verbose_name="Цена")
 
     def __str__(self):
@@ -46,7 +46,7 @@ class Products(models.Model):
 class Users(models.Model):
     "База пользователей"
     name = models.CharField(max_length=150, verbose_name="Имя пользователя")
-    password = models.CharField(verbose_name="Пароль")
+    password = models.CharField(max_length=20, verbose_name="Пароль")
     telephone = models.CharField(max_length=20, verbose_name='Телефон')
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='Дата регистрации')
 

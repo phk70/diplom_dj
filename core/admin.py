@@ -1,3 +1,35 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import Comments, Posts, Products, Users
+
+# Простая регистрация
+# admin.site.register(Comments)
+# admin.site.register(Posts)
+# admin.site.register(Products)
+# admin.site.register(Users)
+
+# Регистрация моделей через классы с редактированием отображения модели для пользователя
+
+
+@admin.register(Comments)
+class CommentsAdmin(admin.ModelAdmin):
+    list_display = ['name', 'comment']
+
+
+@admin.register(Posts)
+class PostsAdmin(admin.ModelAdmin):
+    list_display = ['title', 'context']
+    list_filter = ['published_date']
+
+
+@admin.register(Products)
+class ProductsAdmin(admin.ModelAdmin):
+    list_display = ['title', 'description', 'photo', 'price']
+    list_filter = ['title']
+    search_fields = ['title']
+
+
+@admin.register(Users)
+class UsersAdmin(admin.ModelAdmin):
+    list_display = ['name', 'password', 'telephone']
+    list_filter = ['name']    

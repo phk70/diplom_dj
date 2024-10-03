@@ -43,6 +43,7 @@ class Products(models.Model):
     measurement = models.CharField(max_length=2, choices=unit, default=kg)
     photo = models.ImageField(upload_to='products/photos/', blank=True, null=True, verbose_name='Фото')
     price = models.DecimalField(max_digits=5, decimal_places=0, verbose_name="Цена")
+    # slug = models.SlugField(max_length=255, unique=True, db_index=True, verbose_name="URL")
 
     def __str__(self):
         return self.title
@@ -57,6 +58,7 @@ class Recipies(models.Model):
     title = models.CharField(max_length=150, verbose_name="Заголовок рецепта")
     description = models.TextField(verbose_name="Описание")
     photo = models.ImageField(upload_to='recipies/photos/', blank=True, null=True, verbose_name='Фото')    
+    # slug = models.SlugField(max_length=255, unique=True, db_index=True, verbose_name="URL")
 
     def __str__(self):
         return self.title

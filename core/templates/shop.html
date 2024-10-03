@@ -5,17 +5,17 @@
 
 {% block content %}
 <div class="container">
-    {% for product in products%}
-    <div class="card mb-3">
+    {% for product in products %}
+    <div class="card mb-3 p-3">
         <div class="row">
-            <div class="col-3">                
-                <img src="{{ product.photo.url }}" />
+            <div class="photo_product col-5 p-3">                
+                <img style="width: 100%" src="{{ product.photo.url }}" />
             </div>
-            <div class="col-9">
+            <div class="col-6">
                 <div class="row">
                     <h3>{{ product.title }}</h3>
                 </div>
-                <div class="row">
+                <div class="row me-3 p-3">
                     <p>{{ product.description }}</p>
                 </div>
                 <div class="row">
@@ -25,7 +25,7 @@
                     <div class="col-1">
                         <button class="btn btn-danger" type="button">ЗАКАЗАТЬ</button>
                     </div>                    
-                    <div class="col-11">
+                    <div class="col-10">
                         <h2>{{ product.price }} &#8381;</h2>
                     </div>
                 </div>

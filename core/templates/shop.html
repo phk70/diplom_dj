@@ -1,29 +1,32 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %}БатинаФерма - Магазин{% endblock title %}
 
 {% block content %}
 <div class="container">
     {% for product in products%}
-    <div class="card">
+    <div class="card mb-3">
         <div class="row">
-            <div class="col-3">
-                <p>Фото</p>
-                {% comment %} <img src="" /> {% endcomment %}
+            <div class="col-3">                
+                <img src="{{ product.photo.url }}" />
             </div>
             <div class="col-9">
                 <div class="row">
-                    <h3>{{product.title}}</h3>
+                    <h3>{{ product.title }}</h3>
                 </div>
                 <div class="row">
-                    <p>{{product.description}}</p>
+                    <p>{{ product.description }}</p>
+                </div>
+                <div class="row">
+                    <p>Ед.изм: {{ product.measurement }}</p>
                 </div>
                 <div class="row text-end">
                     <div class="col-1">
                         <button class="btn btn-danger" type="button">ЗАКАЗАТЬ</button>
                     </div>                    
                     <div class="col-11">
-                        <h2>{{product.price}} рублей штука</h2>
+                        <h2>{{ product.price }} &#8381;</h2>
                     </div>
                 </div>
             </div>

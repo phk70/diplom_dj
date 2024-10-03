@@ -31,10 +31,18 @@ class Posts(models.Model):
 
 class Products(models.Model):
     "База продуктов для продажи"
+    kg = 'кг'
+    wt = 'шт'
+    unit = (
+        (kg, 'кг'),
+        (wt, 'шт')        
+    )
+
     title = models.CharField(max_length=150, verbose_name="Наименование")
     description = models.TextField(verbose_name="Описание")
+    measurement = models.CharField(max_length=2, choices=unit, default=kg)
     photo = models.ImageField(upload_to='products/photos/', blank=True, null=True, verbose_name='Фото')
-    price = models.DecimalField(max_digits=5, decimal_places=2, verbose_name="Цена")
+    price = models.DecimalField(max_digits=5, decimal_places=0, verbose_name="Цена")
 
     def __str__(self):
         return self.title

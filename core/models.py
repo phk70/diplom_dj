@@ -42,7 +42,7 @@ class Products(models.Model):
     description = models.TextField(verbose_name="Описание")
     measurement = models.CharField(max_length=2, choices=unit, default=kg)
     photo = models.ImageField(upload_to='products/photos/', blank=True, null=True, verbose_name='Фото')
-    price = models.DecimalField(max_digits=5, decimal_places=0, verbose_name="Цена")
+    price = models.IntegerField(verbose_name="Цена")
     # slug = models.SlugField(max_length=255, unique=True, db_index=True, verbose_name="URL")
 
     def __str__(self):

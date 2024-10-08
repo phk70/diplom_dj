@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import request
 from .models import Posts, Comments, Products, Recipies, Users
 
@@ -41,3 +41,16 @@ def product_detail(request, id):
 
 def add_comments(request):
     pass
+
+
+def add_product(request):
+    if request.method == "POST":
+        title = request.POST.get("title")
+        description = request.POST.get("description")
+        measurement = request.POST.get("measurement")
+        price = request.POST.get("price")
+        photo = request.FILES["photo"]
+        product = Products(title=title, description=description, measurement=measurement, price=price, photo=photo)
+        product.save() 
+        return redirect('/', permanent=True)       
+    return render(request, "core/add_product.html")

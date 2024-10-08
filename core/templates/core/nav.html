@@ -1,0 +1,22 @@
+{% load static %}
+<nav class="p-3 bg-white text-dark">
+    <div>
+        <div>
+            <div>
+                <div>
+                    <a href="#">
+                        <img src="{% static 'core/img/favicon.png' %}}" alt="logo">
+                        <span>БатинаФерма</span>
+                    </a>
+                </div>
+                <div>
+                    <a href="{% url "core:about" %}">О нас</a>
+                    <a href="{% url "core:shop" %}">Магазин</a>
+                    <a href="{% url "core:contacts" %}">Контакты</a>
+                    <a href="{% url "core:recipes" %}">Рецепты</a>
+                    <a href="{% url "core:register" %}">Регистрация</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>

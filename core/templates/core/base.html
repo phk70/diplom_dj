@@ -79,42 +79,8 @@
     </style>
   </head>
   <header>
-    <div class="container">
-      <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark st">
-        <div class="container-fluid">
-          {% comment %} <img src="/ege.png" alt=""> {% endcomment %}
-          <a class="navbar-brand" href="{% url "home" %}"><h1>БатинаФерма</h1></a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Переключатель навигации">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse text-align-content-end" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{% url "about" %}">О нас</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" href="{% url "shop" %}">Магазин</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" href="{% url "contacts" %}">Контакты</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" href="{% url "recipes" %}">Рецепты</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" href="{% url "register" %}">Регистрация</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+    <div class="container">      
+      {% include "core/nav.html" %}
     </div>
   </header>
   <body>

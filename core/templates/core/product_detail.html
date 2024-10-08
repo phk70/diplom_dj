@@ -14,6 +14,9 @@
       <button class="bg-green-500 text-white mt-[50px]">
         <a href="{% url 'core:update_product' product.id %}">Изменить</a>
       </button>
+      <button class="bg-red-500 text-white mt-[50px]">
+        <a href="{% url 'core:delete_product' product.id %}">Удалить</a>
+      </button>
     </div>
   </div>
 {% endblock content %}

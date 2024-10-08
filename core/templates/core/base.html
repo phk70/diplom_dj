@@ -5,74 +5,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{% block title %}БатинаФерма{% endblock title %}</title>     
-    <link rel="stylesheet" href="{% static 'core/styless.css' %}">    
-    <link rel="shortcut icon" type="image/png" href="{% static 'core/img/favicon.png' %}" />
-      
-    {% comment %} <style>
-      body {
-        background-color: #e0d2a2;
-        min-width: 600px;
-      }
-      .container {
-        background-color: #f5e6b5;
-        padding-right: 20px;
-        padding-left: 10px;
-        padding-top: 10px;
-        padding-bottom: 20px;
-      }
-      footer {
-        color: #ffffff;        
-      }
-      .tel {        
-        text-decoration: none;
-        color: #ffffff;
-      }
-      footer li {
-        list-style-type: none;
-        text-align: left;
-      }
-      footer div {       
-        vertical-align: middle;
-      }
-      .collapse ul li {
-        font-size: 20px;
-      }
-      .map {
-        padding-top: 10px;
-        padding-bottom: 10px;
-      }     
-      .reklama {       
-        align-content: top;
-      }   
-      .photo_product {
-      min-width: 540px;
-      } 
-      .news p {
-        margin-bottom: 2px;
-      }      
-      .btn_next {
-        font-size: 12px;
-        margin: 2px;
-        margin-bottom: 10px;
-        padding: 2px;  
-        background-color: #e0d2a2;    
-        border: 0px;          
-      }
-      .nav-item :hover {
-        transform: scale(1.1);
-        transition: transform .15s;
-      }
-      .btn_next button :hover {
-        transform: scale(1.1);
-        transition: transform .15s;
-      }
-      .comment {
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-      }
-    </style> {% endcomment %}
+    <title>{% block title %}БатинаФерма{% endblock title %}</title>             
+    <link rel="shortcut icon" type="image/png" href="{% static 'core/img/favicon.png' %}" />        
+    <link rel="stylesheet" href="{% static 'core/styles.css' %}"> 
   </head>
   <header>       
       {% include "core/nav.html" %}   
@@ -82,8 +17,8 @@
     {% endblock content %}    
   </body>  
   <footer>
-  {% block footer %}
-  <div class="sticky-bottom row bg-dark">
+    {% block footer %}
+    <div class="sticky-bottom row bg-dark">
         
           <div class="col-4">
             Made by on my knee with blood and sweat in 2024г.
@@ -103,7 +38,7 @@
               src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ae24e6dab36939f1acbb775c204412f8858546c317cfbd57a78bb7e6a332be56c&amp;width=270&amp;height=100&amp;lang=ru_RU&amp;scroll=true"
             ></script>
           </div>   
-  </div> 
-  {% endblock footer %}
+      </div> 
+    {% endblock footer %}
   </footer>  
 </html>

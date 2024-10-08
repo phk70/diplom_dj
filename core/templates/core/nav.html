@@ -1,22 +1,23 @@
 {% load static %}
-<nav class="p-3 bg-white text-dark">
-    <div>
-        <div>
-            <div>
-                <div>
-                    <a href="#">
-                        <img src="{% static 'core/img/favicon.png' %}}" alt="logo">
-                        <span>БатинаФерма</span>
+
+<nav class="bg-white shadow-lg">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="flex-justify-between">
+            <div class="flex space-x-12">
+                <div class="flex">
+                    <a class="flex item-center px-2 py-4" href="{% url 'core:home' %}">
+                        <img class="h-20 w-20" src="{% static 'core/img/logo.png' %}" alt="logo">
+                        <span class="text-gray-500 font-semibold text-6xl px-3">БатинаФерма</span>
                     </a>
                 </div>
-                <div>
-                    <a href="{% url "core:about" %}">О нас</a>
-                    <a href="{% url "core:shop" %}">Магазин</a>
-                    <a href="{% url "core:contacts" %}">Контакты</a>
-                    <a href="{% url "core:recipes" %}">Рецепты</a>
-                    <a href="{% url "core:register" %}">Регистрация</a>
+                <div class="items-center flex space-x-3">
+                    <a class="py-4 px-2 text-gray-500 font-semibold text-xl" href="{% url "core:about" %}">О нас</a>
+                    <a class="py-4 px-2 text-gray-500 font-semibold text-xl" href="{% url "core:shop" %}">Магазин</a>
+                    <a class="py-4 px-2 text-gray-500 font-semibold text-xl" href="{% url "core:contacts" %}">Контакты</a>
+                    <a class="py-4 px-2 text-gray-500 font-semibold text-xl" href="{% url "core:recipes" %}">Рецепты</a>
+                    <a class="py-4 px-2 text-gray-500 font-semibold text-xl" href="{% url "core:register" %}">Регистрация</a>
                 </div>
-            </div>
+            </divclass=>
         </div>
     </div>
 </nav>
